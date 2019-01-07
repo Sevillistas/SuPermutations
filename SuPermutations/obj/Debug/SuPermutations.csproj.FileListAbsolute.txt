@@ -1,0 +1,6 @@
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\bin\Debug\SuPermutations.exe.config
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\bin\Debug\SuPermutations.exe
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\bin\Debug\SuPermutations.pdb
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\obj\Debug\SuPermutations.csprojResolveAssemblyReference.cache
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\obj\Debug\SuPermutations.exe
+D:\Учёба\Инфо-коммуникации\SuPermutations\SuPermutations\obj\Debug\SuPermutations.pdb
