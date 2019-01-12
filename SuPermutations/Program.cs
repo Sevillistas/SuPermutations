@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SuPermutations
 {
@@ -24,7 +21,7 @@ namespace SuPermutations
             pTree = new PNode(n);
             Console.WriteLine("Permutations tree created.");
 
-            Console.WriteLine(FindSuperpermutation(n));
+            FindSuperpermutation(n);
 
             //ParallelLoopResult plResult = Parallel.For(0, n, (l, state) =>
             //{
@@ -68,10 +65,30 @@ namespace SuPermutations
                 string newShiftedClipedPerm = perm + (prevN + 1) + perm;
                 expPerms.Append(newShiftedClipedPerm);
             }
-            string result = expPerms.ToString();
-            Console.WriteLine(result);
+            string result = EliminateOverlaps(expPerms.ToString(), prevN);
+            Console.WriteLine("{0}: " + result, result.Length);
 
             return result;
+        }
+
+        private static string EliminateOverlaps(string source, int frameLength)
+        {
+            string trimmed = source;
+            for (int i = frameLength; i < trimmed.Length; i++)
+            {
+                for (int j = 1; j <= frameLength; j++)
+                {
+                    if (trimmed[i].Equals(trimmed[i - j]))
+                    {
+                        if (trimmed.Substring(i - j, j).Equals(trimmed.Substring(i, j)))
+                        {
+                            trimmed = trimmed.Remove(i - j, j);
+                            break;
+                        }
+                    }
+                }
+            }
+            return trimmed;
         }
     }
 }
